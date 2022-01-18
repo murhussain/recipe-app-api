@@ -4,7 +4,6 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
 
 
 class UserManager (BaseUserManager):
-
     def create_user(self, email, password=None, **extra_fields):
         """create and save new user"""
         if not email:
@@ -34,4 +33,3 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
-
